@@ -57,7 +57,6 @@ class ISP():
         soup = BeautifulSoup(left_data, "lxml")
         id = soup.find_all('a')[5]['href'].split('=')[1]
         self.session.get(self.register_url.format(id,time.strftime("%Y年%m月%d日",time.localtime())))  #一键登记链接
-        self.session.get(self.register_url.format("8f31e8f3b6640eb6ee05b20cb8362022224828d6538d",time.strftime("%Y年%m月%d日",time.localtime())))
     def input_username(self):
         while True:
             username = input("请输入你的学号(输入空值默认上次记录或“user.txt”保存的账号)")
