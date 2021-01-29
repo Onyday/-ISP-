@@ -21,12 +21,12 @@ class ISP():
         self.session=requests.session()
     #随机选择服务器
     def server_chose(self):
-        server_list=["2","2-2","4"]
-        server_name=["和谐","平等","敬业"]
-        server_index=random.choice(range(3))
-        chose=random.choice(server_list[server_index])
+        server_list=["1-1","1-2","2","2-1","2-2","3","3-1","3-2","4","4-1","4-3"]
+        server_name=["民主","文明","和谐","自由","平等","公正","法治","爱国","敬业","诚信","友善"]
+        server_index=random.choice(range(11))
+        server_chose=server_list[server_index]
         print("选择的服务器为{}".format(server_name[server_index]))
-        self.main_url= "https://xsswzx.cdu.edu.cn/ispstu{}/com_user/".format(chose)
+        self.main_url= "https://xsswzx.cdu.edu.cn/ispstu{}/com_user/".format(server_chose)
         self.login_url = self.main_url + "oslogin.asp"
         self.register_url = self.main_url + "project_addx.asp?id={}&id2={}"
         self.function_url = self.main_url + "{}.asp"
